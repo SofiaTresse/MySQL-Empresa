@@ -1,42 +1,50 @@
+-- Criando os bancos de dados
 CREATE DATABASE ecommerce_db;
 CREATE DATABASE rh_db;
 
+-- Selecionando o banco de dados do e-commerce
 USE ecommerce_db;
 
+-- Criando a tabela de produtos
 CREATE TABLE produtos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100),
-    descricao TEXT,
-    preco DECIMAL(10,2),
-    quantidade_estoque INT,
-    data_cadastro DATE
+    nome VARCHAR(100), 
+    descricao TEXT, 
+    preco DECIMAL(10,2), 
+    quantidade_estoque INT, 
+    data_cadastro DATE 
 );
 
+-- Criando a tabela de clientes
 CREATE TABLE clientes (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100),
-    email VARCHAR(100),
-    telefone VARCHAR(15),
-    data_cadastro DATE
+    nome VARCHAR(100), 
+    email VARCHAR(100), 
+    telefone VARCHAR(15), 
+    data_cadastro DATE 
 );
 
+-- Selecionando o banco de dados do RH
 USE rh_db;
+
+-- Criando a tabela de funcionários
 CREATE TABLE funcionarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100),
-    cargo VARCHAR(100),
-    salario DECIMAL(10,2),
-    data_contratacao DATE
+    nome VARCHAR(100), 
+    cargo VARCHAR(100), 
+    salario DECIMAL(10,2), 
+    data_contratacao DATE 
 );
 
+-- Criando a tabela de departamentos
 CREATE TABLE departamentos(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100),
-    localizacao VARCHAR(100)
+    nome VARCHAR(100), 
+    localizacao VARCHAR(100) 
 );
-   
-   USE ecommerce_db;
 
+-- Inserindo produtos no banco de dados do e-commerce
+USE ecommerce_db;
 INSERT INTO produtos (nome, descricao, preco, quantidade_estoque, data_cadastro) VALUES
 ('Smartphone XYZ', 'Smartphone de última geração', 1500.00, 100, '2023-10-01'),
 ('Notebook ABC', 'Notebook para alto desempenho', 3200.00, 50, '2023-10-02'),
@@ -49,6 +57,7 @@ INSERT INTO produtos (nome, descricao, preco, quantidade_estoque, data_cadastro)
 ('Impressora Multifuncional', 'Impressora com scanner integrado', 900.00, 15, '2023-10-09'),
 ('SSD 1TB', 'Unidade de armazenamento SSD 1TB', 600.00, 50, '2023-10-10');
 
+-- Inserindo clientes
 INSERT INTO clientes (nome, email, telefone, data_cadastro) VALUES
 ('João Silva', 'joao@email.com', '(11) 99999-1111', '2023-10-01'),
 ('Maria Oliveira', 'maria@email.com', '(11) 98888-2222', '2023-10-02'),
@@ -61,8 +70,8 @@ INSERT INTO clientes (nome, email, telefone, data_cadastro) VALUES
 ('Bruno Lima', 'bruno@email.com', '(81) 91111-9999', '2023-10-09'),
 ('Fernanda Ribeiro', 'fernanda@email.com', '(91) 90000-0000', '2023-10-10');
 
+-- Inserindo funcionários no banco de dados do RH
 USE rh_db;
-
 INSERT INTO funcionarios (nome, cargo, salario, data_contratacao) VALUES
 ('Carlos Souza', 'Gerente', 8000.00, '2023-01-15'),
 ('Ana Lima', 'Analista', 5000.00, '2023-03-20'),
@@ -75,6 +84,7 @@ INSERT INTO funcionarios (nome, cargo, salario, data_contratacao) VALUES
 ('Rodrigo Martins', 'Vendedor', 3000.00, '2023-10-10'),
 ('Gabriela Duarte', 'Assistente Administrativo', 3200.00, '2023-10-15');
 
+-- Inserindo departamentos
 INSERT INTO departamentos (nome, localizacao) VALUES
 ('Vendas', 'São Paulo'),
 ('TI', 'Rio de Janeiro'),
@@ -87,5 +97,6 @@ INSERT INTO departamentos (nome, localizacao) VALUES
 ('Produção', 'Fortaleza'),
 ('Administrativo', 'Manaus');
 
-
+-- Selecionando todos os funcionários
 SELECT * FROM funcionarios;
+
